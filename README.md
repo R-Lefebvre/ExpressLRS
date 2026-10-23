@@ -30,6 +30,18 @@ The Nomad Backpack firmware and its custom telemetry AP settings are built
 separately in the ELRS_Backpack repository. Selecting a regulatory domain does
 not by itself establish compliance with local power, antenna, or licensing rules.
 
+### RadioMaster XR4 receiver
+
+The LR1121 ESP32 RX Wi-Fi environment selects `radiomaster.rx_dual.xr4` in
+`src/targets/esp32-rx.ini`. It uses the same binding phrase and FCC915 domain
+from `src/user_defines.txt`. Build without uploading:
+
+```sh
+pio run -d src -e Unified_ESP32_LR1121_RX_via_WIFI
+```
+
+Use this receiver binary only on the XR4, not on the Nomad or its Backpack.
+
 ## Support ExpressLRS
 You can support ExpressLRS by contributing code, testing new features, sharing your ideas, or helping others get started. We are exceptionally grateful for those who donate their time to our passion.
 
