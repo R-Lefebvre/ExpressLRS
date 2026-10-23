@@ -12,6 +12,24 @@
 
 **ExpressLRS** is developed and maintained by **ExpressLRS LLC** and its passionate open source community, working together to advance reliable, high-performance radio control technology.
 
+## Maxxum Robotics Nomad build
+
+This branch is based on stable ExpressLRS 4.1.0 and configures the binding phrase and `Regulatory_Domain_FCC_915` in
+[`src/user_defines.txt`](src/user_defines.txt) for the RadioMaster Nomad.
+Build the main radio firmware without uploading:
+
+```sh
+pio run -d src -e Unified_ESP32_LR1121_TX_via_WIFI
+```
+
+The LR1121 TX Wi-Fi environment selects the Nomad hardware using `board_config`
+in `src/targets/esp32-tx.ini`; this stable release does not support the
+`ELRS_UNIFIED_CONFIG` environment variable.
+
+The Nomad Backpack firmware and its custom telemetry AP settings are built
+separately in the ELRS_Backpack repository. Selecting a regulatory domain does
+not by itself establish compliance with local power, antenna, or licensing rules.
+
 ## Support ExpressLRS
 You can support ExpressLRS by contributing code, testing new features, sharing your ideas, or helping others get started. We are exceptionally grateful for those who donate their time to our passion.
 
